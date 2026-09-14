@@ -82,7 +82,7 @@ Automated hardening script adapted for the legacy init environment (`service` vs
 
 - **Firewall** — iptables default-DROP policy; only SSH (22) permitted: 
 
-`iptables -A INPUT -p tcp --dport 22 -j ACCEPT iptables -P INPUT DROP *\# ... blocking 25, 79, 110, 111, 143, 512-514, 993, 995, 2049 ...`*
+`iptables -A INPUT -p tcp --dport 22 -j ACCEPT iptables -P INPUT DROP *\# ... blocking 25, 79, 110, 111, 143, 512-514, 993, 995, 2049 ...`
 
 - **SSH hardening** — `PermitRootLogin no`, `PasswordAuthentication no` 
 

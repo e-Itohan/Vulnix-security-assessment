@@ -52,13 +52,17 @@ User user may run the following commands:
 
 Modifying the NFS export with no_root_squash lets a remote root user mount the share and interact as root:
 # On attacker (Kali), as root:
+```bash
 ssh-keygen -t rsa -f vulnix_key
 mount -t nfs -o rw,vers=3 10.10.10.134:/home/vulnix /mnt/vulnix
+```
 # ... authorized_keys planted, escalate via exported /etc/exports ...
 
 # Final blow — SUID bash:
+```bash
 chown root:root bash
 ./bash -p    # root shell
+```
 
 **Why this chain matters:** individually, none of these misconfigs is fatal. Together they demonstrate why *configuration hygiene* (least privilege, service minimization) is the real defense — a recurring lesson of this assessment.
 
@@ -84,7 +88,7 @@ Automated hardening script adapted for the legacy init environment (`service` vs
 
 `sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd\_config sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd\_config`
 
-Full script: [`fix\_up.sh`]./fix_up.sh)
+Full script: [`fix\_up.sh`](./fix_up.sh)
 
 ## 🚀 Usage — Running the Hardening Script
 

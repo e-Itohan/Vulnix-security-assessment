@@ -84,7 +84,7 @@ Automated hardening script adapted for the legacy init environment (`service` vs
 
 `sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd\_config sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd\_config`
 
-Full script: [`fix\_up.sh`](https://lumo.proton.me/fix_up.sh)
+Full script: [`fix\_up.sh`]./fix_up.sh)
 
 ## 🚀 Usage — Running the Hardening Script
 
